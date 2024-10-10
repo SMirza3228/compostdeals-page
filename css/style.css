@@ -18,11 +18,14 @@ body {
 .header {
     width: 100%;
     position: fixed;
+    padding: 5px 0;
     z-index: 1000;
     top: 0;
+    left: 0;
 }
 
 .header__container {
+    max-width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
     border-radius: 55px;
@@ -82,7 +85,7 @@ body {
 
 .sidebar {
     width: 250px;
-    height: 150vh;
+    height: 100%;
     z-index: 1000;
     position: fixed;
     display: flex;
@@ -119,11 +122,19 @@ body {
 }
 
 .main__inner {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 3s ease-in-out;
     padding: 130px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+}
+
+.main__inner.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .main__text {
@@ -174,10 +185,18 @@ body {
 }
 
 .services__inner {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 3s ease-in-out;
     padding: 130px 0;
     display: flex;
     justify-content: space-between;
     gap: 20px;
+}
+
+.services__inner.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .title {
@@ -327,11 +346,19 @@ body {
 }
 
 .start__inner {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 3s ease-in-out;
     padding: 100px 0;
     margin-top: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.start__inner.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .start__text {
@@ -550,6 +577,11 @@ body {
         width: 300px;
     }
 
+    .main__inner {
+        width: 400px;
+        margin: 0 auto;
+    }
+
     .product-1 {
         width: 80%;
         margin: 0 10%;
@@ -565,5 +597,35 @@ body {
 
     .header {
         
+    }
+
+    .services__text {
+        padding-bottom: 50px;
+    }
+
+    .product .title {
+        width: 300px;
+        font-size: 18px;
+        margin: 0 25%;
+        padding-bottom: 10px;
+    }
+
+    .title {
+        width: 300px;
+        font-size: 24px;
+        line-height: 35px;
+        padding-bottom: 20px;
+        margin: 0 auto;
+    }
+
+    .desc {
+        width: 300px;
+        font-size: 14px;
+        margin: 0 auto;
+    }
+
+    .product__card {
+        padding: 20px 0;
+        margin: 0 auto;
     }
 }
